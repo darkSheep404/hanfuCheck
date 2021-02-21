@@ -14,6 +14,12 @@ App({
       })
     }
 
-    this.globalData = {}
+    
+  },
+  globalData: {
+    userInfo: 'StorageUserInfo',
+    wechatNickName: '',
+    wechatAvatarUrl: '',
+    wechatOpenid:''
   }
 })

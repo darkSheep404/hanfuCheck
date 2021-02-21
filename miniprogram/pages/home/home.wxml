@@ -12,10 +12,10 @@
   
 			<view class="search-form round">
 				<text class="cuIcon-search"></text>
-				<input type="text" placeholder="重回汉唐" confirm-type="search"></input>
-			</view>
-			<view class="action">
+        <input type="text" placeholder="重回汉唐" confirm-type="search" bindinput="input"></input>
+        <view class="action" bindtap="getStorelist">
 				<button class="cu-btn bg-gradual-green shadow-blur round">搜索</button>
+			</view>
 			</view>
     </view>
   </view>
@@ -23,14 +23,15 @@
 <view class="cu-item bg-gradual-green content shadow">
         <view class="cu-avatar round" style="background-image:url(/images/001.jpg);"></view>
         <view class="content">
-          <view class="text-title">重回汉唐</view>
+          <view class="text-title">{{storelist[0].storeName}}</view>
           <view class="text-title ">
-            正店
+            <text wx:if="{{storelist[0].official}}">正店</text>
+            <text wx:if="{{!storelist[0].official}}">山店</text>
           </view>
           <view class="bg-grey padding-sm radius margin-top-sm  text-sm">
             <view class="flex">
               <view>备注：</view>
-              <view class="flex-sub"><text>天天打折,泪目\n均价:  300元。\n特点：平价店，大店，种类款式多，有男款</text></view>
+              <view class="flex-sub"><text>{{storelist[0].beizhu}}</text></view>
             </view>
           </view>
         </view>
