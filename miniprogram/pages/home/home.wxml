@@ -1,0 +1,38 @@
+<view>
+  <view class="bg-white">
+   
+  </view>
+  <view class="padding bg-white">
+  <view class="padding bg-gradual-green content shadow radius" >
+    <text>提示:请输入店铺全名\n</text>
+    非全名或错字,会查不到。
+    </view>
+</view>
+<view class="cu-bar bg-white search" :style="[{top:CustomBar + 'px'}]">
+  
+			<view class="search-form round">
+				<text class="cuIcon-search"></text>
+				<input type="text" placeholder="重回汉唐" confirm-type="search"></input>
+			</view>
+			<view class="action">
+				<button class="cu-btn bg-gradual-green shadow-blur round">搜索</button>
+			</view>
+    </view>
+  </view>
+<view class="cu-list menu-avatar comment solids-top">
+<view class="cu-item bg-gradual-green content shadow">
+        <view class="cu-avatar round" style="background-image:url(/images/001.jpg);"></view>
+        <view class="content">
+          <view class="text-title">重回汉唐</view>
+          <view class="text-title ">
+            正店
+          </view>
+          <view class="bg-grey padding-sm radius margin-top-sm  text-sm">
+            <view class="flex">
+              <view>备注：</view>
+              <view class="flex-sub"><text>天天打折,泪目\n均价:  300元。\n特点：平价店，大店，种类款式多，有男款</text></view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>

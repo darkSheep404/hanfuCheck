@@ -1,0 +1,43 @@
+<view class="padding bg-white">
+  <view class="padding bg-gradual-green content shadow radius" >
+    <text>本小程序开发日志\n</text>
+    
+    </view>
+    <view class="cu-bar bg-white solid-bottom margin-top">
+  <view class="action">
+    <text class="cuIcon-title text-green">开发进度</text>
+  </view>
+</view>
+<view class="padding bg-white">
+  <view class="cu-progress round sm striped">
+    <view class="bg-green" style="width:{{'5%'}};"></view>
+  </view></view>
+</view>
+<view class="cu-timeline">
+  <view class="cu-item text-green">
+    <view class="bg-gradual-green content shadow">
+      <view class="cu-capsule radius">
+        <view class="cu-tag bg-white text-green">v0.0.1</view>
+        <view class="cu-tag line-white">2021/02/21</view>
+      </view>
+      <view class="margin-top-sm text-content">
+        <view>1.搜集得汉服正店487家,山店58家,并写入数据库</view>
+        <view>2.建立主页和About页面</view>
+      </view>
+    </view>   
+  </view>
+  <view class="cu-item text-green">
+    <view class="bg-green content shadow">
+      <view class="cu-capsule radius">
+        <view class="cu-tag bg-white text-green">v0.0.0</view>
+        <view class="cu-tag line-white">2021/02/20</view>
+      </view>
+      <view class="margin-top-sm text-content">
+        <view>1.打开电脑</view>
+        <view>2.新建文件夹</view>
+        <view>3.睡觉</view>
+      </view>
+    </view>
+  </view>
+  
+</view>

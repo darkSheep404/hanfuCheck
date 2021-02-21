@@ -1,0 +1,4 @@
+/* miniprogram/pages/home/home.wxss */
+.mybutton{
+  width: 10rpx;
+}
