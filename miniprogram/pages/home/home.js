@@ -30,15 +30,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    var that = this 
-    wx.getStorage({
-      key: 'userInfo',
-      success: function (res) {
-      },
-      fail: function () {
-        that.userInfoAuthorize()
-      }
-    })
+   
   },
 
   /**
@@ -75,32 +67,7 @@ Page({
   onShareAppMessage: function () {
 
   },
-  userInfoAuthorize: function () {
-    var that = this
-    wx.getSetting({
-      success: res => {
-        if (res.authSetting['scope.userInfo']) { // 存储用户信息
-          wx.getUserInfo({
-            success: res => {
-              console.log(res.userInfo.nickName)
-              wx.setStorage({
-                key: app.globalData.userInfo,
-                data: res.userInfo,
-              })
-              //userinfo:用户信息，不含openid等敏感数据
-              app.globalData.wechatNickName = res.userInfo.nickName
-              app.globalData.wechatAvatarUrl = res.userInfo.avatarUrl
-              //app.globalData.wechatOpenid = res.userInfo.openid
-            }
-          })
-        } else { // 跳转到授权页面 
-          wx.navigateTo({
-            url: '/pages/authorize/authorize',
-          })
-        }
-      }
-    })
-  },
+  
   getStorelist:function(){
     var that = this
     /*wx.showLoading({

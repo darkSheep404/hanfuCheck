@@ -66,28 +66,28 @@ Page({
   bindGetUserInfo: function (e) {
     console.log(e)
     if (e.detail.userInfo) {//用户按了允许授权按钮
-      
       console.log(e.detail.userInfo)
       wx.setStorage({
         key: 'userInfo',
         data: e.detail.userInfo
       })
-      wx.cloud.callFunction()
+      wx.cloud.callFunction(
       {
-        name:'add_user'
+        name:'add_user',
         data:{
-          openid:e.detail.userInfo.openid
-          nikename:e.detail.userInfo.nickName
+          openid:e.detail.userInfo.openid,
+          nikename:e.detail.userInfo.nickName,
           avatarUrl:e.detail.userInfo.avatarUrl
         }
-      }
-      var pages = getCurrentPages();             //  获取页面栈
-      var prevPage = pages[pages.length - 2];    // 上一个页面
+      })
       wx.navigateBack({
         delta: 1
       })
-    } else {//用户按了拒绝按钮
       
+    } else {//用户按了拒绝按钮
+      wx.navigateBack({
+        delta: 1
+      })
     }
   }
 })
