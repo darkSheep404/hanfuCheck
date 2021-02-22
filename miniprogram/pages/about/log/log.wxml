@@ -1,6 +1,6 @@
 <view class="padding bg-white">
   <view class="padding bg-gradual-green content shadow radius" >
-    <text>本小程序开发日志\n</text>
+    <text>[查山正]小程序开发日志\n</text>
     
     </view>
     <view class="cu-bar bg-white solid-bottom margin-top">
@@ -10,10 +10,23 @@
 </view>
 <view class="padding bg-white">
   <view class="cu-progress round sm striped">
-    <view class="bg-green" style="width:{{'5%'}};"></view>
+    <view class="bg-green" style="width:{{'20%'}};"></view>
   </view></view>
 </view>
 <view class="cu-timeline">
+  <view class="cu-item text-green">
+    <view class="bg-gradual-green content shadow">
+      <view class="cu-capsule radius">
+        <view class="cu-tag bg-white text-green">v0.1.0</view>
+        <view class="cu-tag line-white">2021/02/22</view>
+      </view>
+      <view class="margin-top-sm text-content">
+        <view>1.决定今天早起继续写代码</view>
+        <view>1.赖床玩手机到12:30</view>
+        <view>3.完善了搜索和提交&纠正功能</view>
+      </view>
+    </view>   
+  </view>
   <view class="cu-item text-green">
     <view class="bg-gradual-green content shadow">
       <view class="cu-capsule radius">

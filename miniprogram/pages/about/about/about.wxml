@@ -1,0 +1,16 @@
+
+<view class='margin-xl bg-white padding-xl radius shadow-lg'>
+  <view class='text-center margin-bottom text-lg  text-grey'>关于[查山正]小程序</view>
+  <view class='text-content'>
+    <view>Hi！同袍~欢迎使用[查山正]小程序！</view>
+    <text>该项目是我个人开发的汉服查山正微信小程序,官方QQ群是737117630\n有什么想法建议或者想来聊聊天都十分欢迎(✪ω✪)\n
+      如果补充或者纠正店铺信息,可以点击主页的纠正或者提交
+      现在是2021年2月22日,数据库当前收录了547家店铺,我会继续搜集店铺信息来补充数据库,如果您有总结的汉服店铺山正信息也欢迎向我们提交\n
+      小程序后续会展示贡献店铺信息的袍子列表来感谢大家的帮助(✪ω✪)</text>
+   
+    <view class='margin-top-sm'>如果这个小程序有帮到你，或者你想表扬一下孩子，可以点击赞赏支持
+      给孩子买只冰激凌或者请孩子恰一顿饭(๑❛ᴗ❛๑)۶</view>
+    <view class='margin-top'>更多功能敬请期待！</view>
+    <view class='margin-top-sm'></view>
+  </view>
+</view>

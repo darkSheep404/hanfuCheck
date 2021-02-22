@@ -21,7 +21,7 @@
   </view>
 <view class="cu-list menu-avatar comment solids-top">
 <view class="cu-item bg-gradual-green content shadow">
-        <view class="cu-avatar round" style="background-image:url(/images/001.jpg);"></view>
+        <image src="/images/logo.png" class="cu-avatar round"> </image>
         <view class="content">
           <view class="text-title">{{storelist[0].storeName}}</view>
           <view class="text-title ">
@@ -36,4 +36,13 @@
           </view>
         </view>
       </view>
-    </view>
+</view>
+  
+    <navigator hover-class='none' url="/pages/correct/correct" >
+    <button class="bg-gradual-green round sm" style="font-size:small;width: fit-content">纠正or补充</button>
+    </navigator>
+<view class='cu-load load-modal' wx:if="{{loadModal}}">
+  <!-- <view class='cuIcon-emojifill text-orange'></view> -->
+  <image src='/images/logo.png' class='png' mode='aspectFit'></image>
+  <view class='gray-text'>加载中...</view>
+</view>

@@ -1,0 +1,26 @@
+<!--miniprogram/pages/correct/correct.wxml-->
+<form>
+<view class="cu-form-group">
+		<view class="title">店铺</view>
+		<input bindinput="nameInput" placeholder="请输入店铺全名"></input>
+	</view>
+<view class="cu-form-group margin-top">
+		<view class="title">山正</view>
+		<picker bindchange="PickerChange" value="{{index}}" range="{{picker}}">
+			<view class="picker">
+				{{index?picker[index]:'选择山正'}}
+			</view>
+		</picker>
+  </view>
+  <view class="cu-form-group align-start">
+		<view class="title">备注</view>
+		<textarea maxlength="-1"  bindinput="beizhuInput" placeholder="备注或一些简短的评价"></textarea>
+  </view>
+  <button class="cu-btn round bg-green button-hover" style="display:flex;margin-top:10rpx"
+  bindtap="submit"
+	>提交</button>
+	<view class='cu-load load-modal' wx:if="{{loadModal}}">
+  <image src='/images/logo.png' class='png' mode='aspectFit'></image>
+  <view class='gray-text'>提交中</view>
+</view>
+</form>

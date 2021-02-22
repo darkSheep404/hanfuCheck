@@ -1,0 +1,6 @@
+/* miniprogram/pages/correct/correct.wxss */
+button{
+    display: flex;
+    margin-right: 0rpx;
+   
+}

@@ -103,8 +103,11 @@ Page({
   },
   getStorelist:function(){
     var that = this
-    wx.showLoading({
+    /*wx.showLoading({
       title: '查询中',
+    })*/
+    that.setData({
+      loadModal:true
     })
     wx.cloud.callFunction({
       // 云函数名称
@@ -116,13 +119,23 @@ Page({
         //提取数据
         var data = res.result.storelist.data
         console.log(res)
-        for (let i = 0; i < data.length; i++) {
+        /*for (let i = 0; i < data.length; i++) {
           console.log(data[i])
-        }
-        wx.hideLoading()
+        }*/
+        //wx.hideLoading()
+        
+        if(data.length>0){
         that.setData({
+          loadModal:false,
           storelist: data
-        })
+        })}
+        else
+        {
+          that.setData({
+            loadModal:false,
+            storelist: [ {_id: "3f1780f4603144780151fc2e5c318e46", beizhu: "未查询到该店\n请检查有误错字或者漏字多字\n如输入无误,欢迎向我们补充数据", storeName: that.data.storeName,official:false}]
+          })
+        }
       },
       fail: console.error
     })

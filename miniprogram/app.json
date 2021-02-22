@@ -2,7 +2,9 @@
   "pages": [
     "pages/home/home",
     "pages/about/about",
-    "pages/about/log/log"
+    "pages/about/log/log",
+    "pages/correct/correct",
+    "pages/support/support"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -14,16 +16,16 @@
   "tabBar": {
     "list": [
       {
-        "pagePath": "pages/about/about",
-        "text": "关于"
-      },
-      {
         "pagePath": "pages/home/home",
-        "text": "首页"
+        "text": "首页",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home2.png"
       },
       {
-        "pagePath": "pages/about/log/log",
-        "text": "日志"
+        "pagePath": "pages/about/about",
+        "text": "关于",
+        "iconPath": "images/about.png",
+        "selectedIconPath": "images/about2.png"
       }
     ]
   },

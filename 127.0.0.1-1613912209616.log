@@ -1,71 +1,0 @@
-[sitemap 索引情况提示] 根据 sitemap 的规则[0]，当前页面 [pages/home/home] 将被索引
-home.js? [sm]:85 战忽包子
-home.js? [sm]:134 输入事件
-home.js? [sm]:135 c
-home.js? [sm]:134 输入事件
-home.js? [sm]:135 ch
-home.js? [sm]:134 输入事件
-home.js? [sm]:135 c
-home.js? [sm]:134 输入事件
-home.js? [sm]:135 
-home.js? [sm]:134 输入事件
-home.js? [sm]:135 重回
-home.js? [sm]:134 输入事件
-home.js? [sm]:135 重回汉唐
-home.js? [sm]:118 {errMsg: "cloud.callFunction:ok", result: {…}, requestID: "27d6be7b-7443-11eb-9e9d-525400dfe4e3"}
-home.js? [sm]:120 {_id: "3f1780f4603144780151fc2e5c318e46", beizhu: "均价:  300元。↵↵特点：平价店，大店，种类款式多，有男款", storeName: "重回汉唐"}beizhu: "均价:  300元。↵↵特点：平价店，大店，种类款式多，有男款"storeName: "重回汉唐"_id: "3f1780f4603144780151fc2e5c318e46"__proto__: Object
-home.js? [sm]:134 输入事件
-home.js? [sm]:135 重回汉
-home.js? [sm]:134 输入事件
-home.js? [sm]:135 重回
-home.js? [sm]:134 输入事件
-home.js? [sm]:135 重
-home.js? [sm]:134 输入事件
-home.js? [sm]:135 
-home.js? [sm]:134 输入事件
-home.js? [sm]:135 test
-home.js? [sm]:118 {errMsg: "cloud.callFunction:ok", result: {…}, requestID: "48c07dbd-7443-11eb-b6bd-525400be5245"}errMsg: "cloud.callFunction:ok"requestID: "48c07dbd-7443-11eb-b6bd-525400be5245"result: storelist: data: Array(0)length: 0nv_length: (...)__proto__: Array(0)concat: ƒ concat()constructor: ƒ Array()copyWithin: ƒ copyWithin()entries: ƒ entries()every: ƒ every()fill: ƒ fill()filter: ƒ filter()find: ƒ find()findIndex: ƒ findIndex()flat: ƒ flat()flatMap: ƒ flatMap()forEach: ƒ forEach()includes: ƒ includes()indexOf: ƒ indexOf()join: ƒ join()keys: ƒ keys()lastIndexOf: ƒ lastIndexOf()length: 0map: ƒ map()nv_concat: ƒ concat()nv_constructor: "Array"nv_every: ƒ every()nv_filter: ƒ filter()nv_forEach: ƒ forEach()nv_indexOf: ƒ indexOf()nv_join: ƒ (s)nv_lastIndexOf: ƒ lastIndexOf()nv_length: (...)nv_map: ƒ map()nv_pop: ƒ pop()nv_push: ƒ push()nv_reduce: ƒ reduce()nv_reduceRight: ƒ reduceRight()nv_reverse: ƒ reverse()nv_shift: ƒ shift()nv_slice: ƒ slice()nv_some: ƒ some()nv_sort: ƒ sort()nv_splice: ƒ splice()nv_toString: ƒ ()nv_unshift: ƒ unshift()pop: ƒ pop()push: ƒ push()reduce: ƒ reduce()reduceRight: ƒ reduceRight()reverse: ƒ reverse()shift: ƒ shift()slice: ƒ slice()some: ƒ some()sort: ƒ sort()splice: ƒ splice()toLocaleString: ƒ toLocaleString()toString: ƒ toString()unshift: ƒ unshift()values: ƒ values()Symbol(Symbol.iterator): ƒ values()Symbol(Symbol.unscopables): {copyWithin: true, entries: true, fill: true, find: true, findIndex: true, …}get nv_length: ƒ ()set nv_length: ƒ (value)__proto__: ObjecterrMsg: "collection.get:ok"__proto__: Objectconstructor: ƒ Object()hasOwnProperty: ƒ hasOwnProperty()isPrototypeOf: ƒ isPrototypeOf()nv_constructor: "Object"nv_toString: ƒ ()propertyIsEnumerable: ƒ propertyIsEnumerable()toLocaleString: ƒ toLocaleString()toString: ƒ toString()valueOf: ƒ valueOf()__defineGetter__: ƒ __defineGetter__()__defineSetter__: ƒ __defineSetter__()__lookupGetter__: ƒ __lookupGetter__()__lookupSetter__: ƒ __lookupSetter__()get __proto__: ƒ __proto__()set __proto__: ƒ __proto__()__proto__: Object__proto__: Object
-home.js? [sm]:134 输入事件
-home.js? [sm]:135 tes
-home.js? [sm]:134 输入事件
-home.js? [sm]:135 te
-home.js? [sm]:134 输入事件
-home.js? [sm]:135 t
-home.js? [sm]:134 输入事件
-home.js? [sm]:135 
-home.js? [sm]:134 输入事件
-home.js? [sm]:135 c
-home.js? [sm]:134 输入事件
-home.js? [sm]:135 ch
-home.js? [sm]:134 输入事件
-home.js? [sm]:135 c
-home.js? [sm]:134 输入事件
-home.js? [sm]:135 
-home.js? [sm]:134 输入事件
-home.js? [sm]:135 C
-home.js? [sm]:134 输入事件
-home.js? [sm]:135 Ch
-home.js? [sm]:134 输入事件
-home.js? [sm]:135 Cho
-home.js? [sm]:134 输入事件
-home.js? [sm]:135 Ch
-home.js? [sm]:134 输入事件
-home.js? [sm]:135 C
-home.js? [sm]:134 输入事件
-home.js? [sm]:135 
-home.js? [sm]:134 输入事件
-home.js? [sm]:135 重回
-home.js? [sm]:134 输入事件
-home.js? [sm]:135 重回汉唐
-home.js? [sm]:118 {errMsg: "cloud.callFunction:ok", result: {…}, requestID: "9097c53b-7443-11eb-99b6-5254007c2bc0"}
-home.js? [sm]:120 {_id: "3f1780f4603144780151fc2e5c318e46", beizhu: "均价:  300元。↵↵特点：平价店，大店，种类款式多，有男款", storeName: "重回汉唐"}beizhu: "均价:  300元。↵↵特点：平价店，大店，种类款式多，有男款"storeName: "重回汉唐"_id: "3f1780f4603144780151fc2e5c318e46"__proto__: Object
-data[0]
-VM317:1 Uncaught ReferenceError: data is not defined
-    at <anonymous>:1:1
-(anonymous) @ VM317:1
-this.DataView
-ƒ DataView() { [native code] }
-this.DataView
-ƒ DataView() { [native code] }
-temp1
-{_id: "3f1780f4603144780151fc2e5c318e46", beizhu: "均价:  300元。↵↵特点：平价店，大店，种类款式多，有男款", storeName: "重回汉唐"}
