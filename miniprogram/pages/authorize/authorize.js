@@ -75,9 +75,13 @@ Page({
       {
         name:'add_user',
         data:{
-          openid:e.detail.userInfo.openid,
           nikename:e.detail.userInfo.nickName,
-          avatarUrl:e.detail.userInfo.avatarUrl
+          avatarUrl:e.detail.userInfo.avatarUrl,
+          gender:e.detail.userInfo.gender,
+          country:e.detail.userInfo.country,
+          province:e.detail.userInfo.province,
+          city:e.detail.userInfo.province,
+          language:e.detail.userInfo.language,
         }
       })
       wx.navigateBack({

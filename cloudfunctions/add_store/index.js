@@ -2,11 +2,13 @@
 const cloud = require('wx-server-sdk')
 cloud.init()
 const db = cloud.database()
-const wxContext = cloud.getWXContext()
+//发布后第一次修改代码
+//修正const wxContext = cloud.getWXContext()放到入口函数内,外面获取不到上下文
+
 // 云函数入口函数
 exports.main = async (event, context) => {
  try{
-   console.log(event.storeName)
+  const wxContext = cloud.getWXContext()
   await db.collection('hanfuStore')
   .add({
     data: [
@@ -14,12 +16,14 @@ exports.main = async (event, context) => {
         storeName: event.storeName,
         beizhu: event.beizhu,
         official:event.official,
-        contributors:wxContext.OPENID
+        contributors:wxContext.OPENID,
+        contact:wxContext.UNIONID,
       },
     ]
   })
  }
- catch{
+ catch(e){
+  console.error("发生了错误:\n")
   console.error(e)
  }
 }

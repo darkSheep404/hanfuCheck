@@ -17,6 +17,20 @@
   <view class="cu-item text-green">
     <view class="bg-gradual-green content shadow">
       <view class="cu-capsule radius">
+        <view class="cu-tag bg-white text-green">v0.2.0</view>
+        <view class="cu-tag line-white">2021/02/22</view>
+      </view>
+      <view class="margin-top-sm text-content">
+        <view>1.增加了模糊查询功能</view>
+        <view>2.优化了未收录店家的显示</view>
+        
+      </view>
+    </view>   
+  </view>
+  <!---->
+  <view class="cu-item text-green">
+    <view class="bg-gradual-green content shadow">
+      <view class="cu-capsule radius">
         <view class="cu-tag bg-white text-green">v0.1.0</view>
         <view class="cu-tag line-white">2021/02/22</view>
       </view>

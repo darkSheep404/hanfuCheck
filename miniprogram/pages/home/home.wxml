@@ -1,13 +1,14 @@
 <view>
-  <view class="bg-white">
-   
-  </view>
   <view class="padding bg-white">
   <view class="padding bg-gradual-green content shadow radius" >
-    <text>提示:请输入店铺全名\n</text>
-    非全名或错字,会查不到。
+    <view>提示:</view>
+  <view wx:for-items="{{tips}}" wx:for-item="tip" wx:key="*this">
+    {{tip}}
+  </view>
     </view>
 </view>
+<view  class="bg-white">
+
 <view class="cu-bar bg-white search" :style="[{top:CustomBar + 'px'}]">
   
 			<view class="search-form round">
@@ -19,23 +20,42 @@
 			</view>
     </view>
   </view>
+  
 <view class="cu-list menu-avatar comment solids-top">
-<view class="cu-item bg-gradual-green content shadow">
+<view class="cu-item bg-gradual-green content shadow" wx:for-items="{{storelist}}" wx:for-item="item" wx:key="*this">
         <image src="/images/logo.png" class="cu-avatar round"> </image>
         <view class="content">
-          <view class="text-title">{{storelist[0].storeName}}</view>
+          <view class="text-title">{{item.storeName}}</view>
           <view class="text-title ">
-            <text wx:if="{{storelist[0].official}}">正店</text>
-            <text wx:if="{{!storelist[0].official}}">山店</text>
+            <text wx:if="{{item.official}}">正店</text>
+            <text wx:if="{{!item.official}}">山店</text>
           </view>
           <view class="bg-grey padding-sm radius margin-top-sm  text-sm">
             <view class="flex">
               <view>备注：</view>
-              <view class="flex-sub"><text>{{storelist[0].beizhu}}</text></view>
+              <view class="flex-sub"><text>{{item.beizhu}}</text></view>
             </view>
           </view>
         </view>
       </view>
+ <!--未查询到时的提示语-->
+ <view class="cu-item bg-gradual-green content shadow" wx:if="{{!included}}">
+        <image src="/images/logo.png" class="cu-avatar round"> </image>
+        <view class="content">
+          <view class="text-title">{{storeName}}</view>
+          <view class="text-title ">
+            <text wx:if="{{item.official}}">未收录</text>
+          </view>
+          <view class="bg-grey padding-sm radius margin-top-sm  text-sm">
+            <view class="flex">
+              <view>备注：</view>
+              <view class="flex-sub"><text>对不起\n我们暂时还没有收录该店铺的信息QAQ
+                欢迎点击[纠正or补充]按钮\n帮助我们补充该店信息
+              </text></view>
+            </view>
+          </view>
+        </view>
+      </view> 
 </view>
   
     <navigator hover-class='none' url="/pages/correct/correct" >
@@ -45,4 +65,5 @@
   <!-- <view class='cuIcon-emojifill text-orange'></view> -->
   <image src='/images/logo.png' class='png' mode='aspectFit'></image>
   <view class='gray-text'>加载中...</view>
+</view>
 </view>

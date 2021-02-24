@@ -22,12 +22,23 @@
 给孩子买只冰激凌或者请孩子恰一顿饭(๑❛ᴗ❛๑)۶
 
 ![image-20210222223708736](./miniprogram/images/money.jpg.jpg)
-
+### v0.2.0
+* 更改查询为模糊查询
+* 优化未收录店铺显示提示
+* 更正了wx.getContext位于exports.main = async (event, context) => {}外无法获取openid的错误
+- [ ] ​ 待实现:汉服店铺贡献者列表,按照贡献店铺数目排序
+- [ ]  对于冲突汉服店铺信息的公示与投票
+- [ ]  获取更多的汉服山正店铺信息
+- [ ]  学习并利用云开发CMS便捷管理数据库
 ## SupportBY
 
 * **微信云开发**
 
 * ColorUI
+
+### TIPS
+
+​	
 
 
 

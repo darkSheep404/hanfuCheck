@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    index: null,
+    index: null,//更改为0是否默认为山店
     picker: ['山', '正'],
     beizhu:"无",
     storeName:null,
@@ -120,7 +120,22 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that=this
+    wx.cloud.callFunction({
+      name:'get_tips',
+     data:{
+       tipname:"correcttips"
+      },
+      success:function(res)
+      {
 
+        var data=res.result.tips.data
+        that.setData({
+          tips:data[0].tips
+        })
+        console.log(data[0].tips)
+      }
+    })
   },
 
   /**

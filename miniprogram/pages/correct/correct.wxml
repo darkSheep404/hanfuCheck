@@ -1,5 +1,12 @@
 <!--miniprogram/pages/correct/correct.wxml-->
-<form>
+<form class="bg-white">
+	<view class="padding bg-white">
+  <view class="padding bg-gradual-green content shadow radius" >
+  <view wx:for-items="{{tips}}" wx:for-item="tip" wx:key="*this">
+    {{tip}}
+  </view>
+    </view>
+</view>
 <view class="cu-form-group">
 		<view class="title">店铺</view>
 		<input bindinput="nameInput" placeholder="请输入店铺全名"></input>
@@ -23,4 +30,5 @@
   <image src='/images/logo.png' class='png' mode='aspectFit'></image>
   <view class='gray-text'>提交中</view>
 </view>
+
 </form>

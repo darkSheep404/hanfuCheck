@@ -6,22 +6,17 @@ const db = cloud.database()
 exports.main = async (event, context) => {
   try {
     console.log("获取的参数:")
-    console.log(event.storeName)
+    console.log(event.tipname)
   return {
     // 获取是否存在该商店
-    storelist: await db.collection('hanfuStore')
+    tips: await db.collection('tips')
     .where({
-      storeName:db.RegExp({
-        regexp: event.storeName,
-        options: 'i',
-      })
-      
+      _id:event.tipname
     })
     .field({
       _id:true,
-      storeName: true,
-      beizhu: true,
-      official:true,
+      tips: true,
+      date:true
     })
     .get()
   }
