@@ -1,7 +1,8 @@
 {
   "pages": [
-    
+   
     "pages/home/home",
+    "pages/rank/rank",
     "pages/about/about",
     "pages/about/log/log",
     "pages/correct/correct",
@@ -18,6 +19,12 @@
   },
   "tabBar": {
     "list": [
+      {
+        "pagePath": "pages/rank/rank",
+        "text": "鸣谢",
+        "iconPath": "images/thanks.png",
+        "selectedIconPath": "images/thanks2.png"
+      },
       {
         "pagePath": "pages/home/home",
         "text": "首页",

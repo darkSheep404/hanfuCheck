@@ -24,7 +24,7 @@
 		<textarea maxlength="-1"  bindinput="beizhuInput" placeholder="备注或一些简短的评价"></textarea>
   </view>
   <button class="cu-btn round bg-green button-hover" style="display:flex;margin-top:10rpx"
-  bindtap="submit"
+  bindtap="submit" disabled="{{isDisabled}}"
 	>提交</button>
 	<view class='cu-load load-modal' wx:if="{{loadModal}}">
   <image src='/images/logo.png' class='png' mode='aspectFit'></image>

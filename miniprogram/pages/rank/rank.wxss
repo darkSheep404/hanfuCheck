@@ -1,0 +1,23 @@
+/* miniprogram/pages/rank/rank.wxss */
+.rankitem{
+    border-radius: 16rpx;
+    position: relative;
+    display: flex;
+    padding: 30rpx,30rpx,30rpx,120rpx;
+    height: 140rpx;
+    justify-content: flex-end;
+    align-items: center;
+}
+.rankitem>.cu-avatar {
+  position: absolute;
+  left: 20rpx
+}
+.rankitem>.content {
+  position: absolute;
+  left: 126rpx;
+  width: calc(100% - 96rpx - 60rpx - 120rpx - 20rpx);
+  line-height: 1.6em;}
+  .ranknum{
+    letter-spacing:2px;
+    padding-right: 30rpx
+  }

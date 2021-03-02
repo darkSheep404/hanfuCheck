@@ -42,9 +42,9 @@
  <view class="cu-item bg-gradual-green content shadow" wx:if="{{!included}}">
         <image src="/images/logo.png" class="cu-avatar round"> </image>
         <view class="content">
-          <view class="text-title">{{storeName}}</view>
+          <view class="text-title">{{showName}}</view>
           <view class="text-title ">
-            <text wx:if="{{item.official}}">未收录</text>
+            <text>暂未收录</text>
           </view>
           <view class="bg-grey padding-sm radius margin-top-sm  text-sm">
             <view class="flex">
@@ -57,7 +57,6 @@
         </view>
       </view> 
 </view>
-  
     <navigator hover-class='none' url="/pages/correct/correct" >
     <button class="bg-gradual-green round sm" style="font-size:small;width: fit-content">纠正or补充</button>
     </navigator>

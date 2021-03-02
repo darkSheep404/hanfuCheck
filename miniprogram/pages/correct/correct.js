@@ -6,10 +6,11 @@ Page({
    */
   data: {
     index: null,//更改为0是否默认为山店
-    picker: ['山', '正'],
+    picker: ['山', '正','我想知道'],
     beizhu:"无",
     storeName:null,
     official:null,
+    isDisabled:false,
   },
   beizhuInput(e) {
     this.setData({
@@ -31,15 +32,29 @@ Page({
         official:false
       })
     }
-    else{
+    else if(e.detail.value==="1"){
       this.setData({
         index: e.detail.value,
         official:true
       })
     }
+    else
+    {
+      this.setData({
+        index: e.detail.value,
+        official:"我想知道"
+      })
+    }
   },
   submit:function (){
     var that = this
+    that.setData({
+      isDisabled:true
+    })
+    //触发事件时就弹出加载框
+    that.setData({
+      loadModal: true
+    })
     console.log(this.data.storeName,this.data.beizhu,this.data.index,this.data.official)
     wx.cloud.callFunction({
       // 云函数名称
@@ -51,7 +66,7 @@ Page({
         //提取数据
         var data = res.result.storelist.data
         //如果已经存在该店铺:进入冲突数据库
-        if(data.length>0){
+        if(data.length>0 ||that.data.index==="2"){
          /*插入数据至待修改列表*/
          {
           wx.cloud.callFunction({
@@ -63,9 +78,6 @@ Page({
             },
             success:function(res)
             {
-              that.setData({
-                loadModal: true
-              })
               setTimeout(()=> {
                 that.setData({
                   loadModal: false

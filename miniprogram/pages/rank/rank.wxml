@@ -1,0 +1,27 @@
+<view>
+<view class="padding bg-white">
+<view class="solid-bottom text-xl padding text-center bg-gradual-green" style="border-radius: 15rpx;">
+        <text class="text-white ">店铺信息贡献者(前十位)</text>
+      </view>
+    </view>
+<view class="cu-timeline bg-white">
+  <view class="cu-item cuIcon-evaluate_fill text-blue" wx:for-items="{{rankList}}" wx:for-item="item" wx:key="*this">
+    <view class="rankitem bg-gradual-green ">
+      <view class="cu-avatar round lg" style="background-image:url({{item.avatarUrl}});">
+      </view> 
+      <view class="content">
+        <view class="text-white">{{item.nickName}}</view>
+        <view class="text-white text-sm flex">
+          <text >
+							<text class="margin-right "></text> 贡献店铺数目
+          </text>
+        </view>
+      </view>
+      <view class="ranknum text-white">
+        {{item.nums}}家
+      </view> 
+
+  </view>
+</view>
+</view>
+</view>

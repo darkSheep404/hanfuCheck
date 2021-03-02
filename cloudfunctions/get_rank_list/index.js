@@ -8,11 +8,14 @@ const db = cloud.database()
 exports.main = async (event, context) => {
   
   return {
-   rankList:db.collection('hanfuStore').aggregate()
-  .group({
-    _id: '$contributors',
-    num: test.sum(1)
-  })
-  .end()
+   rankList: await db.collection('user')
+   .orderBy('nums', 'desc')
+   .field({
+     nickName: true,
+     avatarUrl: true,
+     nums:true,
+   })
+   .limit(10)
+   .get()
   }
 }

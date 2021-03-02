@@ -8,6 +8,7 @@ Page({
     included:true,
     storelist: [ {_id: "3f1780f4603144780151fc2e5c318e46", beizhu: "均价:  300元。\n特点：平价店，大店，种类款式多，有男款", storeName: "重回汉唐",official:true}],
     storeName:null,
+    showName:null,//未查询到时展示的名字,避免直接使用storename导致下方显示随着输入更改
     userInfo: {},
     hasUserInfo: false,
     tips:null,
@@ -89,8 +90,12 @@ console.log("---------------->")
   
   getStorelist:function(){
     var that = this
-    var query="/"+that.data.storeName+"/i"
-    console.log(query)
+    //修复输入框为空时,提交空参数给云函数造成的卡死错误
+   if(that.data.storeName===null)
+   {
+     console.log("未输入")
+     return
+   }
     /*wx.showLoading({
       title: '查询中',
     })*/
@@ -108,20 +113,18 @@ console.log("---------------->")
         //提取数据
         var data = res.result.storelist.data
         console.log(res)
-        /*for (let i = 0; i < data.length; i++) {
-          console.log(data[i])
-        }*/
-        //wx.hideLoading()
-
         if(data.length>0){
         that.setData({
           loadModal:false,
-          storelist: data
+          storelist: data,
+          included:true,
         })}
         else
         {
+          //TODO 此处应该监听到输入后,把included设置为true
           //TODO 未查询到数据时:更新字符串,显示未查询到的提示语
           that.setData({
+            showName:that.data.storeName,
             loadModal:false,
             storelist: data,
             included:false,
