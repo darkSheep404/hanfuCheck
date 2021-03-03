@@ -10,6 +10,7 @@ const _ = db.command
 exports.main = async (event, context) => {
  try{
   const wxContext = cloud.getWXContext()
+  var date=new Date()
   await db.collection('hanfuStore')
   .add({
     data: [
@@ -19,6 +20,7 @@ exports.main = async (event, context) => {
         official:event.official,
         contributors:wxContext.OPENID,
         contact:wxContext.UNIONID,
+        date:date,
       },
     ]
   })

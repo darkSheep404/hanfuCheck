@@ -5,6 +5,7 @@ const db = cloud.database()
 // 云函数入口函数
 exports.main = async (event, context) => {
   try{
+    var date=new Date()
     const wxContext = cloud.getWXContext()
     console.log(event.openid,event.avatarUrl,event.nikename)
     await db.collection('user')
@@ -19,7 +20,9 @@ exports.main = async (event, context) => {
           province : event.province,
           city :event.city,
           country : event.country,
-          languge: event.languge
+          languge: event.languge,
+          date:date,
+          nums:0,
         },
       ]
     })

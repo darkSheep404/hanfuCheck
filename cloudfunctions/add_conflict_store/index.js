@@ -6,6 +6,7 @@ const db = cloud.database()
 // 云函数入口函数
 exports.main = async (event, context) => {
  try{
+  var date=new Date()
   const wxContext = cloud.getWXContext()
   await db.collection('conflict')
   .add({
@@ -16,6 +17,7 @@ exports.main = async (event, context) => {
         official:event.official,
         contributors:wxContext.OPENID,
         contact:wxContext.UNIONID,
+        date:date,
       },
     ]
   })
