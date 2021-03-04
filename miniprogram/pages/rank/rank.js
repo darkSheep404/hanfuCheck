@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    rankList:null
+    rankList:null,
+    loadModel:true,
   },
 
   /**
@@ -22,6 +23,7 @@ Page({
             var data = res.result.rankList.data 
             //此处为了简略代码,删去了else情况的操作
             that.setData({
+              loadModel:false,
               rankList: data
             })
           },
