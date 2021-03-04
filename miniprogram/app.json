@@ -1,14 +1,15 @@
 {
   "pages": [
-   
+    "pages/admin/list/list",
     "pages/home/home",
     "pages/rank/rank",
     "pages/about/about",
     "pages/about/log/log",
     "pages/correct/correct",
     "pages/support/support",
-    "pages/authorize/authorize"
-    
+    "pages/authorize/authorize",
+    "pages/admin/home",
+    "pages/admin/detail/detail"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

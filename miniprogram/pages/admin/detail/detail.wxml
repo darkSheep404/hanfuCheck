@@ -1,0 +1,40 @@
+<!--miniprogram/pages/admin/detail/detail.wxml-->
+<!--除了店铺名外其他可以编辑的菜单-->
+<!--miniprogram/pages/correct/correct.wxml-->
+<form class="bg-white">
+	<view class="padding bg-white">
+  <view class="padding bg-gradual-green content shadow radius" >
+  <view wx:for-items="{{tips}}" wx:for-item="tip" wx:key="*this">
+    {{tip}}
+  </view>
+    </view>
+</view>
+
+<view class="cu-form-group">
+    <view class="title">店铺</view>
+    <text style="text-align:center">{{storeName}}</text>
+	</view>
+<view class="cu-form-group margin-top">
+		<view class="title">山正</view>
+		<picker bindchange="PickerChange" value="{{index}}" range="{{picker}}">
+			<view class="picker">
+        {{official?'正店':'山店'}}
+        <!-- {{index?picker[index]:'选择山正'}}-->
+        <!--三目表达式,index是值就值,无则提示语-->
+			</view>
+		</picker>
+  </view>
+  <view class="cu-form-group align-start">
+		<view class="title">备注</view>
+		<textarea maxlength="-1"  bindinput="beizhuInput" value="{{beizhu}}"></textarea>
+  </view>
+  <button class="cu-btn round bg-green button-hover" style="display:flex;margin-top:10rpx"
+  bindtap="submit" disabled="{{isDisabled}}"
+	>提交</button>
+	<view class='cu-load load-modal' wx:if="{{loadModal}}">
+  <image src='/images/logo.png' class='png' mode='aspectFit'></image>
+  <view class='gray-text'>提交中</view>
+</view>
+
+</form>
+
