@@ -104,4 +104,7 @@ Page({
       current: 'https://6865-helloyun-4ge5h4wyc91f5778-1304890457.tcb.qcloud.la/myQrCode/money.jpg?sign=0148353eddb814548368e3db70dd26ee&t=1614000653' // 当前显示图片的http链接      
     })
   },
+  onShareAppMessage: function () {
+    title:'关于查山正'
+  },
 })
