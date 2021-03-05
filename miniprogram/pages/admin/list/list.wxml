@@ -1,19 +1,32 @@
 
   <view>
-  <view class="search-form round">
-    <text class="cuIcon-search"></text>
-    <input type="text" placeholder="重回汉唐" confirm-type="search" bindinput="input"></input>
-    <view class="action" bindtap="getStorelist">
-    <button class="cu-btn bg-gradual-green shadow-blur round">搜索</button>
+   
+<!--tips框-->
+<view>
+  <view class="padding bg-white">
+  <view class="padding bg-gradual-green content shadow radius" >
+    <view>提示:</view>
+  <view wx:for-items="{{tips}}" wx:for-item="tip" wx:key="*this">
+    {{tip}}
   </view>
-  </view>
+  <text class="text-bold"> 共有{{maxPages}}页,现在在第{{currentPages+1}}页</text>
+ 
+    </view>
+    <view class="cu-form-group">
+		<view class="title">跳转到第</view>
+    <input placeholder="?" class="bg-gray" bindinput="input" type="number"></input>
+    <view class="title" >页</view>
+		<button class="cu-btn bg-green shadow round" bindtap="switchPages" style="width:250rpx">跳转</button>
+	</view>
 
-
-
-<view class="cu-list menu-avatar comment solids-top">
-  <text></text>
+</view>
+</view>
+  <!--页面跳转框-->
+ 
+<!--列表-->
+<view class="cu-list menu-avatar comment solids-top bg-white">
 <view class="cu-item bg-gradual-green content shadow" wx:for-items="{{storelist}}" wx:for-item="item" wx:key="*this" data-id='{{item._id}}' bindtap='onItemClick' 
-bindlongpress="onItemPress">
+bindlongpress="onItemPress" style="padding: 15rpx 30rpx 0rpx 120rpx;">
     <image src="/images/logo.png" class="cu-avatar round"> </image>
     <view class="content">
       <view class="text-title">{{item.storeName}} 
@@ -30,27 +43,19 @@ bindlongpress="onItemPress">
       </view>
     </view>
   </view>
-<!--未查询到时的提示语-->
-<view class="cu-item bg-gradual-green content shadow" wx:if="{{!included}}">
-    <image src="/images/logo.png" class="cu-avatar round"> </image>
-    <view class="content">
-      <view class="text-title">{{showName}}</view>
-      <view class="text-title ">
-        <text>暂未收录</text>
-      </view>
-      <view class="bg-grey padding-sm radius margin-top-sm  text-sm">
-        <view class="flex">
-          <view>备注：</view>
-          <view class="flex-sub"><text>对不起\n我们暂时还没有收录该店铺的信息QAQ
-            欢迎点击[纠正or补充]按钮\n帮助我们补充该店信息
-          </text></view>
-        </view>
-      </view>
-    </view>
-  </view> 
+
 </view>
 
 </view>
+ <!--两个固定的翻页按钮-->
+ <view>
+    <button class="cu-btn f1 round bg-white mybutton" style="width:fit-content" bindtap="prevPage" wx:if="{{currentPages}}">上一页</button>
+    <button class="cu-btn f1 round bg-white mybuttonRight" style="width:fit-content"
+    bindtap="nextPage" wx:if="{{maxPages-currentPages}}"
+    >下一页</button>
+  </view>
+
+<!--弹窗-->
 <view class="cu-modal {{loadModel?'show':''}}">
   <view class="cu-dialog">
     <view class="padding-xl">
@@ -65,4 +70,9 @@ bindlongpress="onItemPress">
       </view>
     </view>
   </view>
+</view>
+<view class='cu-load load-modal' wx:if="{{loadModel2}}">
+  <!-- <view class='cuIcon-emojifill text-orange'></view> -->
+  <image src='/images/logo.png' class='png' mode='aspectFit'></image>
+  <view class='gray-text'>加载中...</view>
 </view>

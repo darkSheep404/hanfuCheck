@@ -1,15 +1,16 @@
-<scroll-view scroll-y class="scrollPage">
-  <view class="UCenter-bg">
-    <image src="/images/logo.png" class="png" mode="widthFix"></image>
-    <view class="text-xl">汉服查山正
-      <text class="text-df">v0.1</text>
-    </view>
-    <view class="margin-top-sm ">
-      <text>By:战忽包子\n</text>
+
+<view class="tower-swiper" bindtouchmove="towerMove" bindtouchstart="towerStart" bindtouchend="towerEnd">
+  <view class="tower-item {{item.zIndex==1?'none':''}}" wx:for="{{swiperList}}" 
+  wx:key style="--index:{{item.zIndex}};--left:{{item.mLeft}}">
+    <view class="swiper-item">
+      <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+      <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video>
     </view>
   </view>
-  <view class="padding bg-white">
+</view>
+<view class="padding bg-white">
   <view class="padding bg-gradual-green content shadow radius" >
+    <text>[查山正]\n</text>
     <text>QQ:2920905303\n</text>
     <text>个人网站:darksheep.xyz\n</text>
     <text>官方反馈&交流吹水群:737117630\n</text>
@@ -38,4 +39,3 @@
     </view>
   </view>
   <view class="cu-tabbar-height"></view>
-</scroll-view>

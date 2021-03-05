@@ -1,0 +1,8 @@
+navigator{
+  margin-top:40rpx;
+}
+navigator{
+  display: flex;
+  justify-items: center;
+  align-items: center;
+}

@@ -1,40 +1,18 @@
-// miniprogram/pages/rank/rank.js
+// miniprogram/pages/admin/adminLogin/login.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    rankList:null,
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      loadModal:true
-    })
-    var that=this;//进入云函数中this发生了变化,使用this.setData({})无效
-    wx.cloud.callFunction({
-          // 云函数名称
-          name: 'get_rank_list',
-        //成功后执行
-          success: function (res) {
-            //提取数据--返回的数据为res.result.云函数处定义的字段名.data
-            var data = res.result.rankList.data 
-            //此处为了简略代码,删去了else情况的操作
-            that.setData({
-              rankList: data
-            })
-            setTimeout(()=> {
-              that.setData({
-                loadModal: false
-              })},400)
-          },
-          fail: console.error
-        })
-      
+
   },
 
   /**

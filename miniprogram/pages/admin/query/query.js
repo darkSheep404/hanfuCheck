@@ -3,38 +3,14 @@ Page({
    * 页面的初始数据
    */
   data: {
+    included:true,
     storelist: [ {_id: "3f1780f46031242d0151f5055e4bdea8", beizhu: "均价:  300元。\n特点：平价店，大店，种类款式多，有男款", storeName: "重回汉唐",official:true}],
     id:null,
     currentId:null,
     tips:null,
-    currentPages:0,
-    maxPages:0,
-    inputPages:0,
-    loadModel2:false,
-    loadModel:false,
+    storeName:null,
   },
-  prevPage:function(e){
-    this.setData({
-      currentPages:this.data.currentPages-1
-    })
-    console.log("向前翻了一页,当前页数",this.data.currentPages)
-    this.getStoreList(this.data.currentPages)
-  },
-  nextPage:function(e){
-    var temp=this.data.currentPages
-    console.log("翻页前前页数",this.data.currentPages)
-    this.setData({
-      currentPages:temp+1
-    })
-    console.log("后翻了一页,当前页数",this.data.currentPages)
-    this.getStoreList(this.data.currentPages)
-  },
-  switchPages:function(e){
-    this.setData({
-      currentPages:parseInt(this.data.inputPages)
-    })
-    this.getStoreList(this.data.currentPages)
-  },
+
   onItemClick: function (e) {
     console.log(e.currentTarget.dataset.id)
     wx.navigateTo({
@@ -43,20 +19,62 @@ Page({
   },
   input: function (e) {
     this.setData({
-     inputPages: e.detail.value-1
+      storeName: e.detail.value
     })
     console.log("输入事件")
-    console.log(this.data.inputPages)
+    console.log(this.data.storeName)
   },
-  
+  queryStoreList:function(){
+    var that = this
+    console.log("查询",that.data.storeName)
+    //修复输入框为空时,提交空参数给云函数造成的卡死错误
+   if(that.data.storeName===null)
+   {
+     console.log("未输入")
+     return
+   }
+    that.setData({
+      loadModal:true
+    })
+    wx.cloud.callFunction({
+      // 云函数名称
+      name: 'get_store_byName',
+      data:{
+       storeName:that.data.storeName
+      },
+      success: function (res) {
+        //提取数据
+        var data = res.result.storelist.data
+        console.log(res)
+        if(data.length>0){
+        that.setData({
+          loadModal:false,
+          storelist: data,
+          included:true,
+        })}
+        else
+        {
+          //TODO 此处应该监听到输入后,把included设置为true
+          //TODO 未查询到数据时:更新字符串,显示未查询到的提示语
+          that.setData({
+            showName:that.data.storeName,
+            loadModal:false,
+            storelist: data,
+            included:false,
+          })
+        }
+      },
+      fail: console.error
+    })
+  },
   onItemPress:function (e) {
     this.setData({
-      loadModel:true,
+      loadModel2:true,
       currentId:e.currentTarget.dataset.id
     })
     console.log("长安--->",e.currentTarget.dataset.id)
   },
-  hideModel:function(e){
+  hideModal:function(e){
     this.setData({
       loadModel:false,
     })
@@ -75,34 +93,14 @@ Page({
       success: function (res) {
         console.log(res)
         that.setData({
-          loadModel:false
+          loadModel2:false
         })
         console.log("删除了一个店铺数据")   
       },
       fail: console.error
     })
   },
-  getStoreList:function(pages){
-    var that=this;//进入云函数中this发生了变化,使用this.setData({})无效
-    wx.cloud.callFunction({
-      // 云函数名称
-      name: 'get_store_list',
-      data:{
-        pages:pages
-      },
-    //携带的参数:storeName--云函数中使用event.storeName获取
-    //成功后执行
-      success: function (res) {
-        var data = res.result.storeList.data 
-        that.setData({
-          //此处设置一个加载中弹窗,区分删除确认弹窗
-          loadModel2:false,
-          storelist: data
-        })
-      },
-      fail: console.error
-    })
-  },
+  
   /**
    * 生命周期函数--监听页面加载
    */
@@ -119,29 +117,12 @@ console.log("---------------->")
       {
         var data=res.result.tips.data
         that.setData({
-          tips:data[0].tips,
-          loadModel2:true,
+          tips:data[0].tips
         })
         console.log(data[0].tips)
       }
     })
 
-    wx.cloud.callFunction({
-      name:'get_store_count',
-      success:function(res)
-      {
-        console.log("---------------->")
-        console.log(res)
-        var data=res.result.total
-        that.setData({
-          //向下取整:13=4*3+1 3,3,3,3,1共5页
-          //
-          maxPages:Math.floor(data/10)+1
-        })
-        console.log("最大页面数",that.data.maxPages)
-      }
-    })
-    
   },
 
   /**
@@ -155,10 +136,6 @@ console.log("---------------->")
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.setData({
-      loadModel2:true
-    })
-   this.getStoreList(0)
   },
 
   /**

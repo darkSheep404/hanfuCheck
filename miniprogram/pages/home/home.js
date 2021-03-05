@@ -96,6 +96,12 @@ console.log("---------------->")
      console.log("未输入")
      return
    }
+   if(that.data.storeName==="996")
+   {
+    wx.navigateTo({
+      url: '/pages/admin/home',
+    })
+   }
     /*wx.showLoading({
       title: '查询中',
     })*/

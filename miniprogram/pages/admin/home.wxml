@@ -1,2 +1,39 @@
-<!--miniprogram/pages/admin/home.wxml-->
-<text>miniprogram/pages/admin/home.wxml</text>
+
+<view class="cu-bar bg-white margin-top">
+  <view class="action">
+    <text class="cuIcon-title text-blue">后台管理</text> 
+  </view>
+</view>
+<view class="tower-swiper" bindtouchmove="towerMove" bindtouchstart="towerStart" bindtouchend="towerEnd">
+  <view class="tower-item {{item.zIndex==1?'none':''}}" wx:for="{{swiperList}}" 
+  wx:key style="--index:{{item.zIndex}};--left:{{item.mLeft}}">
+    <view class="swiper-item">
+      <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+      <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video>
+    </view>
+  </view>
+</view>
+<view class="padding bg-white">
+  <view class="padding bg-gradual-green content shadow radius" >
+    <text>QQ:2920905303\n</text>
+    <text>个人网站:darksheep.xyz\n</text>
+    <text>官方反馈&交流吹水群:737117630\n</text>
+    <text>既见君子,云胡不喜</text>
+    </view>
+</view>
+
+  <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
+    <view class="cu-item arrow">
+      <navigator class="content" url="/pages/admin/list/list" hover-class="none">
+        <image src="/images/aboutproject.png" class="png" mode="aspectFit"></image>
+        <text class="text-grey">所有店铺列表</text>
+      </navigator>
+    </view>
+    <view class="cu-item arrow">
+      <navigator class="content" url="/pages/admin/query/query" hover-class="none">
+        <image src="/images/log.png" class="png" mode="aspectFit"></image>
+        <text class="text-grey">根据店铺名称查询并修改</text>
+      </navigator>
+    </view>
+  </view>
+  <view class="cu-tabbar-height"></view>
