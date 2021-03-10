@@ -16,7 +16,8 @@ exports.main = async (event, context) => {
     .field({
       _id:true,
       tips: true,
-      date:true
+      date:true,
+      test:true,
     })
     .get()
   }

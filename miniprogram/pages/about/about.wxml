@@ -9,15 +9,10 @@
   </view>
 </view>
 <view class="padding bg-white">
-  <view class="padding bg-gradual-green content shadow radius" >
-    <text>[查山正]\n</text>
-    <text>QQ:2920905303\n</text>
-    <text>个人网站:darksheep.xyz\n</text>
-    <text>官方反馈&交流吹水群:737117630\n</text>
-    <text>既见君子,云胡不喜\n</text>
-    <text>轮播图画师@白果不吃白果</text>
+    <view class="padding bg-gradual-green content shadow radius">
+       <text user-select="true"> {{tips}}</text> 
     </view>
-</view>
+  </view>
 
   <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
     <view class="cu-item arrow">

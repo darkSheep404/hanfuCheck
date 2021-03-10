@@ -143,9 +143,9 @@ Page({
 
         var data=res.result.tips.data
         that.setData({
-          tips:data[0].tips
+          tips:data[0].test
         })
-        console.log(data[0].tips)
+        console.log(data[0].test)
       }
     })
   },

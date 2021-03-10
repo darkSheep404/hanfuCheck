@@ -1,68 +1,75 @@
 <view>
   <view class="padding bg-white">
-  <view class="padding bg-gradual-green content shadow radius" >
-    <view>提示:</view>
-  <view wx:for-items="{{tips}}" wx:for-item="tip" wx:key="*this">
-    {{tip}}
-  </view>
+    <view class="padding bg-gradual-green content shadow radius">
+       <text user-select="true"> {{tips}}</text> 
     </view>
-</view>
-<view  class="bg-white">
+  </view>
+  <view class="bg-white">
 
-<view class="cu-bar bg-white search" :style="[{top:CustomBar + 'px'}]">
-  
-			<view class="search-form round">
-				<text class="cuIcon-search"></text>
+    <view class="cu-bar bg-white search" :style="[{top:CustomBar + 'px'}]">
+
+      <view class="search-form round">
+        <text class="cuIcon-search"></text>
         <input type="text" placeholder="重回汉唐" confirm-type="search" bindinput="input"></input>
         <view class="action" bindtap="getStorelist">
-				<button class="cu-btn bg-gradual-green shadow-blur round">搜索</button>
-			</view>
-			</view>
+          <button class="cu-btn bg-gradual-green shadow-blur round">搜索</button>
+        </view>
+      </view>
     </view>
   </view>
-  
-<view class="cu-list menu-avatar comment solids-top">
-<view class="cu-item bg-gradual-green content shadow" wx:for-items="{{storelist}}" wx:for-item="item" wx:key="*this">
-        <image src="/images/logo.png" class="cu-avatar round"> </image>
-        <view class="content">
-          <view class="text-title">{{item.storeName}}</view>
-          <view class="text-title ">
-            <text wx:if="{{item.official}}">正店</text>
-            <text wx:if="{{!item.official}}">山店</text>
-          </view>
-          <view class="bg-grey padding-sm radius margin-top-sm  text-sm">
-            <view class="flex">
-              <view>备注：</view>
-              <view class="flex-sub"><text>{{item.beizhu}}</text></view>
-            </view>
+
+  <view class="cu-list menu-avatar comment solids-top">
+    <view class="cu-item bg-gradual-green content shadow" wx:for-items="{{storelist}}" wx:for-item="item"
+      wx:key="*this">
+      <image src="/images/logo.png" class="cu-avatar round"> </image>
+      <view class="content">
+        <view class="text-title">{{item.storeName}}</view>
+        <view class="text-title ">
+          <text wx:if="{{item.official}}">正店</text>
+          <text wx:if="{{!item.official}}">山店</text>
+        </view>
+        <view class="bg-grey padding-sm radius margin-top-sm  text-sm">
+          <view class="flex">
+            <view>备注：</view>
+            <view class="flex-sub"><text>{{item.beizhu}}</text></view>
           </view>
         </view>
       </view>
- <!--未查询到时的提示语-->
- <view class="cu-item bg-gradual-green content shadow" wx:if="{{!included}}">
-        <image src="/images/logo.png" class="cu-avatar round"> </image>
-        <view class="content">
-          <view class="text-title">{{showName}}</view>
-          <view class="text-title ">
-            <text>暂未收录</text>
-          </view>
-          <view class="bg-grey padding-sm radius margin-top-sm  text-sm">
-            <view class="flex">
-              <view>备注：</view>
-              <view class="flex-sub"><text>对不起\n我们暂时还没有收录该店铺的信息QAQ
-                欢迎点击[纠正or补充]按钮\n帮助我们补充该店信息
+    </view>
+    <!--未查询到时的提示语-->
+
+    <view class="cu-item bg-gradual-green content shadow" wx:if="{{!included}}">
+      <image src="/images/logo.png" class="cu-avatar round"> </image>
+      <view class="content">
+        <view class="text-title">{{showName}}</view>
+        <view class="text-title ">
+          <text>暂未收录</text>
+        </view>
+        <view class="bg-grey padding-sm radius margin-top-sm  text-sm">
+          <view class="flex">
+            <view>备注：</view>
+            <view class="flex-sub"><text>对不起\n我们暂时还没有收录该店铺的信息QAQ
+                您可以点击[纠正信息]提醒我们补充
+                也十分欢迎点击[补充店铺]
+                帮助我们补充该店信息[万分感谢]
               </text></view>
-            </view>
           </view>
         </view>
-      </view> 
-</view>
-    <navigator hover-class='none' url="/pages/correct/correct" >
-    <button class="bg-gradual-green round sm" style="font-size:small;width: fit-content">纠正or补充</button>
-    </navigator>
-<view class='cu-load load-modal' wx:if="{{loadModal}}">
-  <!-- <view class='cuIcon-emojifill text-orange'></view> -->
-  <image src='/images/logo.png' class='png' mode='aspectFit'></image>
-  <view class='gray-text'>加载中...</view>
-</view>
+        <!--content结束-->
+      </view>
+    </view>
+  </view>
+  <!--结束未查询提示语-->
+  <view class="mybuttongroup">
+    <button  open-type="contact" class=" bg-gradual-green round sm " id="leftbutton">纠正信息</button>
+    <navigator hover-class='none' url="/pages/correct/correct">
+    <button class=" bg-gradual-green round sm" id="rightbutton" >补充店铺</button>
+  </navigator>
+  </view>
+ 
+  <view class='cu-load load-modal' wx:if="{{loadModal}}">
+    <!-- <view class='cuIcon-emojifill text-orange'></view> -->
+    <image src='/images/logo.png' class='png' mode='aspectFit'></image>
+    <view class='gray-text'>加载中...</view>
+  </view>
 </view>

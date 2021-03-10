@@ -1,2 +1,28 @@
-<!--miniprogram/pages/admin/adminLogin/login.wxml-->
-<text>miniprogram/pages/admin/adminLogin/login.wxml</text>
+<!--miniprogram/pages/correct/correct.wxml-->
+<form class="bg-white">
+<view class="cu-form-group">
+		<view class="title">用户名</view>
+		<input bindinput="nameInput" placeholder="请输入用户名"></input>
+  </view>
+  <view class="cu-form-group">
+		<view class="title">密码</view>
+		<input bindinput="passwordInput" placeholder="请输入密码"></input>
+	</view>
+
+  <button class="cu-btn round bg-green button-hover" style="display:flex;margin-top:10rpx"
+  bindtap="submit" disabled="{{isDisabled}}"
+	>提交</button>
+</form>
+<view class="cu-modal {{loadModal?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">登录失败</view>
+      <view class="action" bindtap="hideModal">
+        <text class="cuIcon-close text-red"></text>
+      </view>
+    </view>
+    <view class="padding-xl">
+     {{checkres.msg}}
+    </view>
+  </view>
+</view>

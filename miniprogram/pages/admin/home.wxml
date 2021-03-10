@@ -16,9 +16,7 @@
 <view class="padding bg-white">
   <view class="padding bg-gradual-green content shadow radius" >
     <text>QQ:2920905303\n</text>
-    <text>个人网站:darksheep.xyz\n</text>
-    <text>官方反馈&交流吹水群:737117630\n</text>
-    <text>既见君子,云胡不喜</text>
+    <text>官方群:737117630\n</text>
     </view>
 </view>
 
@@ -33,6 +31,12 @@
       <navigator class="content" url="/pages/admin/query/query" hover-class="none">
         <image src="/images/log.png" class="png" mode="aspectFit"></image>
         <text class="text-grey">根据店铺名称查询并修改</text>
+      </navigator>
+    </view>
+    <view class="cu-item arrow">
+      <navigator class="content" url="/pages/admin/tips/tips" hover-class="none">
+        <image src="/images/support.png" class="png" mode="aspectFit"></image>
+        <text class="text-grey">提示语修改</text>
       </navigator>
     </view>
   </view>

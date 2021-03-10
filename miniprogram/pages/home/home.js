@@ -32,9 +32,9 @@ console.log("---------------->")
 
         var data=res.result.tips.data
         that.setData({
-          tips:data[0].tips
+          tips:data[0].test
         })
-        console.log(data[0].tips)
+        console.log(data[0].test)
       }
     })
   },
@@ -99,7 +99,7 @@ console.log("---------------->")
    if(that.data.storeName==="996")
    {
     wx.navigateTo({
-      url: '/pages/admin/home',
+      url: '/pages/admin/adminLogin/login',
     })
    }
     /*wx.showLoading({

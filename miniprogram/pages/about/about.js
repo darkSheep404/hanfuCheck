@@ -38,11 +38,26 @@ Page({
       url: 'https://6865-helloyun-4ge5h4wyc91f5778-1304890457.tcb.qcloud.la/hanfu/009%E5%94%90%E5%9C%86%E9%A2%86%E8%A2%8D.jpg?sign=852d46bf767d85409fec3213b0adf755&t=1614952876'
     }
   ],
-    
-  },
+    tips:null  },
   onLoad() {
+    var that=this;
     this.towerSwiper('swiperList');
     // 初始化towerSwiper 传已有的数组名即可
+    wx.cloud.callFunction({
+      name:'get_tips',
+     data:{
+       tipname:"abouttips"
+      },
+      success:function(res)
+      {
+
+        var data=res.result.tips.data
+        that.setData({
+          tips:data[0].test
+        })
+        console.log(data[0].tips)
+      }
+    })
   },
   // towerSwiper
   // 初始化towerSwiper
