@@ -1,11 +1,11 @@
 {
   "pages": [
     "pages/home/home",
+    "pages/authorize/authorize",
     "pages/rank/rank",
     "pages/about/about",
     "pages/about/log/log",
     "pages/correct/correct",
-    "pages/authorize/authorize",
     "pages/admin/detail/detail",
     "pages/admin/list/list",
     "pages/admin/home",

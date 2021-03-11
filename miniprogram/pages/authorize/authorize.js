@@ -90,7 +90,7 @@ Page({
       
     } else {//用户按了拒绝按钮
       wx.navigateBack({
-        delta: 1
+        delta: 2
       })
     }
   }
