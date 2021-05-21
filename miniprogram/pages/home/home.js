@@ -113,6 +113,12 @@ console.log("---------------->")
       url: '/pages/admin/adminLogin/login',
     })
    }
+   else if(that.data.storeName==="110")
+   {
+    wx.navigateTo({
+      url: '/pages/test/home',
+    })
+   }
     /*wx.showLoading({
       title: '查询中',
     })*/

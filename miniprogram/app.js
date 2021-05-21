@@ -1,4 +1,5 @@
 //app.js
+var jsonList = require('data/data.js');
 App({
   onLaunch: function () {
     if (!wx.cloud) {
@@ -13,13 +14,13 @@ App({
         traceUser: true,
       })
     }
-
-    
   },
   globalData: {
     userInfo: 'StorageUserInfo',
     wechatNickName: '',
     wechatAvatarUrl: '',
-    wechatOpenid:''
+    wechatOpenid:'',
+      questionList: jsonList.questionList  // 拿到答题数据
+    
   }
 })

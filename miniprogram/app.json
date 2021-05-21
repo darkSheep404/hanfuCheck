@@ -12,8 +12,9 @@
     "pages/admin/query/query",
     "pages/admin/adminLogin/login",
     "pages/admin/tips/tips",
-    "pages/exam/examhome",
-    "pages/exam/exam/exam"
+    "pages/test/home",
+    "pages/test/test/test",
+    "pages/test/result/result"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
