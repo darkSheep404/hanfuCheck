@@ -34,4 +34,6 @@
   height:70rpx;
   line-height:70rpx;
   font-size:14px;
+  color: #06ae56;
+    background-color: #ffffff;
 }

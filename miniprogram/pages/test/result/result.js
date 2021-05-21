@@ -24,7 +24,9 @@ Page({
     console.log(this.data.chooseValue);
   },
   toView: function () {
-
+    this.setData({
+      modalShow: true
+    })
   },
   // 返回首页
   toIndex: function () {

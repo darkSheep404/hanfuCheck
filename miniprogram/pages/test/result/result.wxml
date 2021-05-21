@@ -18,8 +18,9 @@
       <text wx:for="{{wrongList}}">[{{item-0+1}}]</text> 题
     </view>
     <view class="wrong-btns">
-      <button type="default" bindtap="toView" hover-class="other-button-hover" class="wrong-btn" wx:if="{{wrongList.length > 0}}"> 点击查看 </button>
-      <button type="default" bindtap="toIndex" hover-class="other-button-hover" class="wrong-btn"> 返回首页 </button>
+      <button  bindtap="toView" hover-class="other-button-hover" class="wrong-btn" wx:if="{{wrongList.length > 0}}"> 点击查看 </button>
+      <button  bindtap="toIndex" hover-class="other-button-hover" class="wrong-btn"> 返回首页 </button>
     </view>
   </view>
 </view>
+<wrong-modal modalShow="{{modalShow}}" wrongList="{{wrongList}}" wrongListSort="{{wrongListSort}}" chooseValue="{{chooseValue}}" questionList="{{questionList}}" testId="{{testId}}"></wrong-modal>
