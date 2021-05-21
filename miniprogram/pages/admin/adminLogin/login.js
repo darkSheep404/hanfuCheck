@@ -34,6 +34,12 @@ Page({
          checkres:res.result
        })
        if(that.data.checkres.res){
+        wx.setStorageSync('username',that.data.checkres.username);
+        //  此处不使用setStorageSync而室友setStorage则放入失败
+         // wx.setStorageSync('password', that.data.password);
+        // 直接使用本地data内输入password存入
+        console.log('获取到的id',that.data.checkres.username);
+        // 将username作为id放入本地
         wx.navigateTo({
           url: '/pages/admin/home',
         })
@@ -57,7 +63,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log('为空时返回值',wx.getStorageSync('usename'))
+    //wx.getStorageSync('usename')!==null判定不通过
+    if(wx.getStorageSync('username'))
+    {
+      wx.navigateTo({
+        url: '/pages/admin/home',
+      })
+    }
   },
 
   /**

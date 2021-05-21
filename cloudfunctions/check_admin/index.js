@@ -18,7 +18,9 @@ exports.main = async (event, context) => {
       if(pwd.data[0].password===event.password)
       {
         errmsg={res:true,
-        msg:"登录成功"}
+        msg:"登录成功",
+        username:event.username
+      }
       return errmsg;
     }
       else

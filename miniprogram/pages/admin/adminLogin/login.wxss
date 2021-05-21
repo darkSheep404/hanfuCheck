@@ -1,1 +1,13 @@
 /* miniprogram/pages/admin/adminLogin/login.wxss */
+page{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+form{
+  width: 100%;
+  border-radius: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
