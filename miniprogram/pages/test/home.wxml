@@ -1,7 +1,7 @@
 <view class="page">
   <view class="page-title">请选择试题：</view>
   <view class="flex-box">
-    <view class="flex-item"><view class="item bc_green" bindtap="toTestPage" data-testId="001">基础知识</view></view>
-    <view class="flex-item"><view class="item bc_red" bindtap="toTestPage" data-testId="002">学术知识</view></view>
+    <view class="flex-item"><view class="item bc_green" bindtap="toTestPage" data-testId="001">基础知识测试</view></view>
+    <view class="flex-item"><view class="item bc_red" bindtap="toTestPage" data-testId="002">学术知识测试</view></view>
   </view>
 </view>

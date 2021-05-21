@@ -1,6 +1,10 @@
 /* pages/test/test.wxss */
 .page {
   padding: 20rpx;
+  background-color: #2ba245;
+  color: #ffffff;
+  margin: 20rpx;
+  border-radius: 10rpx;
 }
 .page__bd {
   padding: 20rpx;
@@ -11,11 +15,16 @@
 }
 .toindex-btn {
   margin-top: 20rpx;
-  display:inline-block;
+  display:block;
   line-height:2.3;
   font-size:13px;
   padding:0 1.34em;
-  color:#576b95;
+  color:#2ba245;
   text-decoration:underline;
   float: right;
+}
+button{
+  background-color: #4CAF50;
+  border-radius: 10rpx;
+    color: white;
 }

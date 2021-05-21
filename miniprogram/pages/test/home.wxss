@@ -2,6 +2,8 @@
   padding-top: 20rpx;
   padding-left: 40rpx;
   font-size: 16px;
+  color: #2ba245;
+  font-weight: bold;
 }
 .flex-box {
   display: flex;
@@ -24,8 +26,8 @@
   display: flex;
   align-items:center;
   justify-content: center;
-  color: rgb(236, 19, 19);
-  background-color: aqua;
+  color: #ffffff;
+  background-color: #2ba245;
 }
 .item-last {
   flex: 1;
