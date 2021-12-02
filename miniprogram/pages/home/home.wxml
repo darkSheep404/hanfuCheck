@@ -1,26 +1,36 @@
 <view>
+
   <view class="padding bg-white">
-    <view class="padding bg-gradual-green content shadow radius">
-       <text user-select="true"> {{tips}}</text> 
+    <view class="padding bg-brown content shadow radius">
+       <text user-select="true">{{tips}}</text> 
     </view>
   </view>
-  <view class="bg-white">
+  <view class='nav-list'>
+    <navigator open-type="navigate" hover-class='none' url="/pages/basics/{{item.name}}/{{item.name}}" class="nav-li bg-{{item.color}} " wx:for="{{elements}}" wx:key>
+      <view class="nav-title">{{item.title}}</view>
+      <view class="nav-name">{{item.name}}</view>
+      <text class='cuIcon-{{item.icon}}'></text>
+    </navigator>
+  </view>
+ 
+  <view class="bg-white" style="margin-bottom:10px">
 
     <view class="cu-bar bg-white search" :style="[{top:CustomBar + 'px'}]">
 
       <view class="search-form round">
         <text class="cuIcon-search"></text>
         <input type="text" placeholder="重回汉唐" confirm-type="search" bindinput="input"></input>
-        <view class="action" bindtap="getStorelist">
+        <view class="action" bindtap="getStorelist" style="margin-right:0px">
           <button class="cu-btn bg-gradual-green shadow-blur round">搜索</button>
         </view>
       </view>
     </view>
   </view>
+  
 
-  <view class="cu-list menu-avatar comment solids-top">
+  <view class="cu-list menu-avatar comment solids-top" style="padding-left:30rpx;padding-right:30rpx;">
     <view class="cu-item bg-gradual-green content shadow" wx:for-items="{{storelist}}" wx:for-item="item"
-      wx:key="*this">
+      wx:key="*this" style="margin-bottom:10px;border-radius:10px;">
       <image src="/images/logo.png" class="cu-avatar round"> </image>
       <view class="content">
         <view class="text-title">{{item.storeName}}</view>

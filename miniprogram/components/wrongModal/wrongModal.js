@@ -17,7 +17,7 @@ Component({
     // 课程ID
     testId: {
       type: String,
-      value: '101-1'
+      value: '001'
     },
     // 错题题序集合
     wrongList: {
@@ -66,7 +66,7 @@ Component({
     // 返回首页
     toIndex: function () {
       wx.reLaunch({
-        url: '../home/home'
+        url: '../home'
       })
     }
   }

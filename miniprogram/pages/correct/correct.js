@@ -6,7 +6,7 @@ Page({
    */
   data: {
     index: null,//更改为0是否默认为山店
-    picker: ['山', '正','我想知道'],
+    picker: ['山', '正'],
     beizhu:"无",
     storeName:null,
     official:null,
@@ -38,13 +38,14 @@ Page({
         official:true
       })
     }
-    else
-    {
-      this.setData({
-        index: e.detail.value,
-        official:"我想知道"
-      })
-    }
+    //删除我想知道属性，此页面仅供用户补充数据使用
+    // else
+    // {
+    //   this.setData({
+    //     index: e.detail.value,
+    //     official:"我想知道"
+    //   })
+    // }
   },
   submit:function (){
     var that = this

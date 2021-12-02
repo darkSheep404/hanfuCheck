@@ -1,11 +1,13 @@
 // miniprogram/pages/test/result/result.js
+var app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+      testId:"001",
+      // 组件取到了这里的testId而非组件自身定义的
   },
 
   /**
@@ -17,6 +19,8 @@ Page({
     let wrongList = JSON.parse(options.wrongList);
     let chooseValue = JSON.parse(options.chooseValue);
     this.setData({
+      questionList: app.globalData.questionList["001"],
+      testId:options.testId,
       totalScore: options.totalScore,
       wrongList: wrongList,
       chooseValue: chooseValue

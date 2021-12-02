@@ -36,3 +36,20 @@ width: fit-content;
     height: 100%;
     background-color: #ffffff;
   }
+  .nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0px 10rpx 0px;
+    justify-content: space-between;
+  }
+  .nav-li {
+    padding: 30rpx;
+    border-radius: 12rpx;
+    width: 45%;
+    margin: 0 2.5% 40rpx;
+    /*background-image: url(https://image.weilanwl.com/color2.0/cardBg.png);*/
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 1;
+  }
